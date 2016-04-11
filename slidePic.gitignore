@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+li{ list-style:none;}
+#div1{ width:320px; height:100px; border:1px #000 solid; margin:20px auto; position:relative; overflow:hidden;}
+#div1 ul{ width:2000px; position:absolute; left:0;}
+#div1 li{ float:left; margin-right:10px;}
+#div1 img{ width:100px; height:100px;}
+</style>
+<script>
+window.onload=function(){
+	var oUl = document.getElementsByTagName('ul')[0];
+var aLi = oUl.getElementsByTagName('li');
+/*oUl.innerHTML += oUl.innerHTML;*/
+var speed = -3;
+var oneLi = aLi[0].offsetWidth + 10;
+setInterval(function(){
+	if(oUl.offsetLeft < - oneLi*aLi.length/2){
+		oUl.style.left = 0;
+	}
+	oUl.style.left = speed + oUl.offsetLeft + 'px';
+},30);
+}
+
+</script>
+</head>
+
+<body>
+<div id="div1">
+	<ul>
+    	<li><img src="img/1.jpg"></li>
+        <li><img src="img/2.jpg"></li>
+        <li><img src="img/3.jpg"></li>
+        <li><img src="img/1.jpg"></li>
+        <li><img src="img/2.jpg"></li>
+        <li><img src="img/3.jpg"></li>
+<!--        <li><img src="images/4.jpg"></li>
+        <li><img src="images/5.jpg"></li>-->
+    </ul>
+</div>
+
+</body>
+</html>
